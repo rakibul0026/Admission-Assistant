@@ -4,38 +4,48 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
     android:id="@+id/main"
     tools:context=".MainActivity">
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:weightSum="10">
-    <RelativeLayout
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="1000dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="102dp"
-            android:text="@string/Admission_assistant"
-            android:textColor="@color/white"
-            android:textSize="34sp"/>
-    </RelativeLayout>
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+
+                android:layout_marginStart="24dp"
+                android:text="@string/Admission_assistant"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+
+            <ImageView
+                android:id="@+id/universityImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text"
+             
+
+                android:src="@drawable/image"
+
+                />
+        </RelativeLayout>
 
 
-
-
-
-    <GridLayout
+        <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,8 +56,39 @@
         android:background="@drawable/gradient"
         android:useDefaultMargins="true">
 
-        <!-- Card 1: Login -->
-        <androidx.cardview.widget.CardView
+        <!-- Card 1: Home -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/home" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/home"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Card 2: login-->
+            <androidx.cardview.widget.CardView
+            android:id="@+id/login"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -77,38 +118,10 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 2: Home -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_columnWeight="1"
-            card_view:cardCornerRadius="16dp"
-            card_view:cardElevation="8dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/home" />
-
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="@string/home"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
         <!-- Card 3: Abroad Admission -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/abroad"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -140,6 +153,7 @@
 
         <!-- Card 4: Native Admission -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/natived"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -170,6 +184,7 @@
 
         <!-- Card 5: Notifications -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/notification"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -200,6 +215,7 @@
 
         <!-- Card 6: Calendar -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/Calendar"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -230,6 +246,7 @@
 
         <!-- Card 7: Downloads -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/Downloads"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -242,23 +259,25 @@
                 android:gravity="center"
                 android:padding="16dp">
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pdf_file" />
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="@string/Download"
+                    android:text="@string/Pdf"
                     android:textSize="16sp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:textStyle="bold"/>
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/downloading" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Card 8: Chatbot -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/Chatbot"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -289,6 +308,7 @@
 
         <!-- Card 9: Settings -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/Settings"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -315,6 +335,35 @@
                     android:gravity="center"
                     android:textStyle="bold"/>
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
+            <!-- Card 10: Exam -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Exam"
+                android:layout_height="150dp"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardElevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/exam"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/Exam"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+               </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
